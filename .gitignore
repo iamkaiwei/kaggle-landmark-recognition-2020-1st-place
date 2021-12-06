@@ -3,4 +3,5 @@ __pycache__/
 
 input/*
 models/*
+archive/*
 .vscode/settings.json

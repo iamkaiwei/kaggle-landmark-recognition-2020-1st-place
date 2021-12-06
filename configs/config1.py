@@ -5,17 +5,21 @@ abs_path = os.path.dirname(__file__)
 
 args = {
     'model_path':'../models/',
-    'data_path':'/ssd/kaggle_landmark/input/',
-    'data_path_2019':'/ssd/kaggle_landmark/2019/',
-    'valid_csv_fn':'recognition_solution_v2.1.csv',
+    # 'data_path':'/ssd/kaggle_landmark/input/',
+    'data_path':'../',
+    # 'data_path_2019':'/ssd/kaggle_landmark/2019/',
+    'data_path_2019':'../',
+    # 'valid_csv_fn':'recognition_solution_v2.1.csv',
+    'valid_csv_fn':'validation.csv',
     'train_csv_fn':'train.csv',
+    'test_csv_fn':'test.csv',
 
-    'gpus':'0,1',
+    'gpus':'3',
     'filter_warnings':True,
     'logger': 'neptune',
     'num_sanity_val_steps': 0,
 
-    'distributed_backend': 'ddp',
+    'distributed_backend': 'dp',
     'channels_last':False,
 
     'gradient_accumulation_steps':2,
@@ -60,7 +64,8 @@ args = {
     'n_classes':81313,
     'data_frac':1.,
 
-    'neptune_project':'xx/kaggle-landmark',
+    'neptune_project':'iamkaiwei/Kaggle-googlelandscape',
+    'api_token':'eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiJmMTJmZDA5Ni0yYmRmLTRkMGUtODgxZC1jNTQ4YWQ5ODQyZWMifQ==',
 }
 
 args['tr_aug'] = A.Compose([
